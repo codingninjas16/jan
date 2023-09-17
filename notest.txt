@@ -1,0 +1,3 @@
+//terminal command
+//rm -rf folderName
+//rm fileName
