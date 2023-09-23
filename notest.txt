@@ -1,3 +1,10 @@
 //terminal command
 //rm -rf folderName
 //rm fileName
+
+//MVC 
+//routes --> (path,method)
+
+//method :
+//path --> URL (RESOUCRES)
+//order 
