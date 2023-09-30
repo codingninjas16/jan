@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 require('dotenv').config();
 const studentRouter = require('./router/student');
 const teacherRoute = require('./router/teacher');
@@ -6,6 +7,8 @@ const app = express();
 
 const PORT = 8000;
 
+app.use(bodyParser.urlencoded({extended:true}));// true --> nested object --. content:type:"urlencode"
+app.use(bodyParser.json()); // content-type:"application/json"
 //router
 
 //middleware
@@ -13,13 +16,15 @@ http://localhosT;8000/student/test
 // /student /test
 // app.use('/student',studentRouter);
 // app.use('/teacher',teacherRoute);
-app.use('/',require('./router/index'));
 
+
+app.use('/',require('./router/index'));
 app.get('/test',(req,res) =>{
+    //delete
     return res.send('hello -get !!');
 });
 
-app.post('/test',(req,res) =>{
+app.get('/test',(req,res) =>{
     return res.send('hello -post!!');
 });
 //root url

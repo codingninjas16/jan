@@ -8,3 +8,22 @@
 //method :
 //path --> URL (RESOUCRES)
 //order 
+
+//extraction of data
+//data-send query params ?abc=10+10 --> query {abc:'10 20'},req.query 
+//data-send /:id --> params --> req.params.id --> pay attention you have some special cases;
+//data-
+
+routes --> function(path,method)
+GET 
+POST --> CREATE A NEW ENTITY 
+PUT --.to update a entity 
+DELETE
+PATCH
+OPTIONS
+
+http://localhost:8000/user
+
+//get method ,
+// path --> abc
+app.get('/abc')
