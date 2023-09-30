@@ -27,3 +27,13 @@ http://localhost:8000/user
 //get method ,
 // path --> abc
 app.get('/abc')
+
+//DB
+
+// sql v/s no-sql 
+//no-sql
+// connection 
+// schema
+//queries 
+ //create,read,update,delete,poulate,
+// integrate it to project 
