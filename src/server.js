@@ -1,6 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 require('dotenv').config();
+
+
 const studentRouter = require('./router/student');
 const teacherRoute = require('./router/teacher');
 const app = express();
@@ -34,13 +37,22 @@ app.use('/',(req,res) =>{
 })
 
 
-module.exports.startServer = function startServer(){
-        app.listen(PORT,function listenServer(err){
-        if(err){
-            console.log(`error is ${err}`);
-            return;
-        }
-        console.log(`server is up at port ${PORT} on ${process.env.enviroment}`);
-    })
+module.exports.startServer = async function startServer(){
+    try{
+        await mongoose.connect(process.env.mongoDBUrl);
+        await app.listen(PORT);
+        console.log(`db connected and server is up at port ${PORT} on ${process.env.enviroment}`);
+        // app.listen(PORT,function listenServer(err){
+        //     if(err){
+        //         console.log(`error is ${err}`);
+        //         return;
+        //     }
+        //     console.log(`db connected and server is up at port ${PORT} on ${process.env.enviroment}`);
+        // })
+    }catch(error){
+        console.log('error --> ',error);
+    }
+       
+       
 };
 

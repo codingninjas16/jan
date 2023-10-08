@@ -31,9 +31,17 @@ app.get('/abc')
 //DB
 
 // sql v/s no-sql 
+ // schema -->
+ // relation
+ // scalability
 //no-sql
+//mongoose --> ODM
 // connection 
+ // mongoose.connect 
+ // atomic --> connection is done then start the server
 // schema
 //queries 
- //create,read,update,delete,poulate,
+ //create,read,update,delete,poulate,sort ,order by
 // integrate it to project 
+
+// populate select
